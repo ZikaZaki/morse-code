@@ -26,3 +26,15 @@ end
 
 # Test cases: It should return ("MY").
 puts decode_word('-- -.--')
+
+# Decode_sentence() method is to decode an entire sentence in Morse code.
+def decode_sentence(str)
+  sentence = ''
+  arry = str.split('   ')
+  arry.each { |i| sentence += "#{decode_word(i)} " }
+  sentence
+end
+
+# Test cases: It should return ("A BOX FULL OF RUBIES").
+msg = decode_sentence('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+puts msg
